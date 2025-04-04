@@ -1,0 +1,116 @@
+==PROF== Connected to process 8790 (/teamspace/studios/this_studio/a.out)
+==PROF== Profiling "matrix_multiplication_kernel_..." - 0: 0%....50%....100% - 9 passes
+==PROF== Profiling "matrix_multiplication_kernel_..." - 1: 0%....50%....100% - 9 passes
+==PROF== Disconnected from process 8790
+[8790] a.out@127.0.0.1
+  matrix_multiplication_kernel_naive(const float *, const float *, float *, int, int, int) (128, 128, 1)x(32, 32, 1), Context 1, Stream 7, Device 0, CC 7.5
+    Section: GPU Speed Of Light Throughput
+    ----------------------- ------------- -------------
+    Metric Name               Metric Unit  Metric Value
+    ----------------------- ------------- -------------
+    DRAM Frequency          cycle/nsecond          5.00
+    SM Frequency            cycle/usecond        584.96
+    Elapsed Cycles                  cycle    1325284423
+    Memory Throughput                   %         49.73
+    DRAM Throughput                     %          2.57
+    Duration                       second          2.27
+    L1/TEX Cache Throughput             %         99.46
+    L2 Cache Throughput                 %          3.09
+    SM Active Cycles                cycle 1323914939.65
+    Compute (SM) Throughput             %         16.18
+    ----------------------- ------------- -------------
+
+    WRN   This kernel exhibits low compute throughput and memory bandwidth utilization relative to the peak performance 
+          of this device. Achieved compute throughput and/or memory bandwidth below 60.0% of peak typically indicate    
+          latency issues. Look at Scheduler Statistics and Warp State Statistics for potential reasons.                 
+
+    Section: Launch Statistics
+    -------------------------------- --------------- ---------------
+    Metric Name                          Metric Unit    Metric Value
+    -------------------------------- --------------- ---------------
+    Block Size                                                  1024
+    Function Cache Configuration                     CachePreferNone
+    Grid Size                                                  16384
+    Registers Per Thread             register/thread              31
+    Shared Memory Configuration Size           Kbyte           32.77
+    Driver Shared Memory Per Block        byte/block               0
+    Dynamic Shared Memory Per Block       byte/block               0
+    Static Shared Memory Per Block        byte/block               0
+    Threads                                   thread        16777216
+    Waves Per SM                                              409.60
+    -------------------------------- --------------- ---------------
+
+    Section: Occupancy
+    ------------------------------- ----------- ------------
+    Metric Name                     Metric Unit Metric Value
+    ------------------------------- ----------- ------------
+    Block Limit SM                        block           16
+    Block Limit Registers                 block            2
+    Block Limit Shared Mem                block           16
+    Block Limit Warps                     block            1
+    Theoretical Active Warps per SM        warp           32
+    Theoretical Occupancy                     %          100
+    Achieved Occupancy                        %        97.66
+    Achieved Active Warps Per SM           warp        31.25
+    ------------------------------- ----------- ------------
+
+    INF   This kernel's theoretical occupancy is not impacted by any block limit.                                       
+
+  matrix_multiplication_kernel_coalesced(const float *, const float *, float *, int, int, int) (128, 128, 1)x(32, 32, 1), Context 1, Stream 7, Device 0, CC 7.5
+    Section: GPU Speed Of Light Throughput
+    ----------------------- ------------- ------------
+    Metric Name               Metric Unit Metric Value
+    ----------------------- ------------- ------------
+    DRAM Frequency          cycle/nsecond         4.98
+    SM Frequency            cycle/usecond       582.76
+    Elapsed Cycles                  cycle       629384
+    Memory Throughput                   %        10.41
+    DRAM Throughput                     %         0.43
+    Duration                      msecond         1.08
+    L1/TEX Cache Throughput             %        54.12
+    L2 Cache Throughput                 %         0.08
+    SM Active Cycles                cycle    121080.77
+    Compute (SM) Throughput             %        10.41
+    ----------------------- ------------- ------------
+
+    WRN   This kernel exhibits low compute throughput and memory bandwidth utilization relative to the peak performance 
+          of this device. Achieved compute throughput and/or memory bandwidth below 60.0% of peak typically indicate    
+          latency issues. Look at Scheduler Statistics and Warp State Statistics for potential reasons.                 
+
+    Section: Launch Statistics
+    -------------------------------- --------------- ---------------
+    Metric Name                          Metric Unit    Metric Value
+    -------------------------------- --------------- ---------------
+    Block Size                                                  1024
+    Function Cache Configuration                     CachePreferNone
+    Grid Size                                                  16384
+    Registers Per Thread             register/thread              34
+    Shared Memory Configuration Size           Kbyte           32.77
+    Driver Shared Memory Per Block        byte/block               0
+    Dynamic Shared Memory Per Block       byte/block               0
+    Static Shared Memory Per Block        byte/block               0
+    Threads                                   thread        16777216
+    Waves Per SM                                              409.60
+    -------------------------------- --------------- ---------------
+
+    Section: Occupancy
+    ------------------------------- ----------- ------------
+    Metric Name                     Metric Unit Metric Value
+    ------------------------------- ----------- ------------
+    Block Limit SM                        block           16
+    Block Limit Registers                 block            1
+    Block Limit Shared Mem                block           16
+    Block Limit Warps                     block            1
+    Theoretical Active Warps per SM        warp           32
+    Theoretical Occupancy                     %          100
+    Achieved Occupancy                        %        77.72
+    Achieved Active Warps Per SM           warp        24.87
+    ------------------------------- ----------- ------------
+
+    WRN   This kernel's theoretical occupancy is not impacted by any block limit. The difference between calculated     
+          theoretical (100.0%) and measured achieved occupancy (77.7%) can be the result of warp scheduling overheads   
+          or workload imbalances during the kernel execution. Load imbalances can occur between warps within a block    
+          as well as across blocks of the same kernel. See the CUDA Best Practices Guide                                
+          (https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#occupancy) for more details on           
+          optimizing occupancy.                                                                                         
+
