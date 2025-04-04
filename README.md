@@ -18,6 +18,7 @@ __global__ void matrix_multiplication_kernel_naive(const float* A, const float* 
 
 }
 ```
+The kernel takes in three matrices A, B, and C, of dimensions MxN, NxK, and MxK, and performs AxB = C.
 And the idea was to optimize this kernel and benchmark the performance improvements! 
 
 1. The first Optimized kernel reanrranged the Thread executions to make use of memory coalescing
